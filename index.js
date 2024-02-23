@@ -1,7 +1,7 @@
 import re
 
 def validate_email(email):
-    # E-posta adresinin doğru formatta olup olmadığını kontrol etmek için bir regex kullanıyoruz
+    # We will check that our mail adress is true
     pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
     
     if re.match(pattern, email):
