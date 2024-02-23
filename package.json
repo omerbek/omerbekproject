@@ -1,5 +1,5 @@
 {
-    "name": "teatestproject",  
+    "name": "omerbekproject",  
     "version": "1.0.2",
     "description": "omerbek test project ", 
     "main": "index.js",
@@ -8,7 +8,7 @@
     },
     "repository": {
     "type": "git",
-    "url": "https://github.com/omerbek/teatestproject.git"
+    "url": "https://github.com/omerbek/omerbekproject.git"
      },
       "keywords": [
       "test",    
@@ -22,8 +22,8 @@
     "author": "omerbek", 
     "license": "MIT",
     "bugs": {
-      "url": "https://github.com/omerbek/teatestproject/issues" 
+      "url": "https://github.com/omerbek/omerbekproject/issues" 
     },
-    "homepage": "https://github.com/Homerbek/teatestproject#readme" 
+    "homepage": "https://github.com/omerbek/omerbekprojeckt#readme" 
   }
   
