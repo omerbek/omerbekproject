@@ -1,20 +1,48 @@
-import re
+# Omerbek Email Validate Node.js Project
 
-def validate_email(email):
-    # E-posta adresinin doğru formatta olup olmadığını kontrol etmek için bir regex kullanıyoruz
-    pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
-    
-    if re.match(pattern, email):
-        return True
-    else:
-        return False
+Bu proje, e-posta adreslerini doğrulamak için Express kullanılarak geliştirilmiştir.
 
-def main():
-    email = input("Lütfen e-posta adresinizi girin: ")
-    if validate_email(email):
-        print("Girilen e-posta adresi geçerlidir.")
-    else:
-        print("Girilen e-posta adresi geçersizdir.")
+## Kurulum
 
-if __name__ == "__main__":
-    main()
+Projeyi yerel olarak çalıştırabilmek için aşağıdaki adımları takip etmelisiniz:
+
+1. Terminal ekranına şu komutu yazarak projeyi klonlayın:
+
+    ```bash
+    git clone https://github.com/omerbek/omerbekproject
+    ```
+
+2. Proje dizinine gidin:
+
+    ```bash
+    cd omerbekproject
+    ```
+
+3. Gerekli paketleri yüklemek için npm kullanarak şu komutu çalıştırın:
+
+    ```bash
+    npm install
+    ```
+
+4. Projeyi başlatmak için şu komutu kullanın:
+
+    ```bash
+    npm start
+    ```
+
+## Nginx ile Gerekli Ayarlar
+
+Bu proje Nginx ile çalışmak üzere tasarlanmıştır. Aşağıdaki adımları takip ederek gerekli ayarları yapabilirsiniz:
+
+```nginx
+server {
+    listen 443 ssl;
+    server_name <domain> *.<domain>;
+
+    ssl_certificate /etc/letsencrypt/live/<domain>/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/<domain>/privkey.pem;
+
+    location / {
+        proxy_pass http://localhost:4444;
+    }
+}
